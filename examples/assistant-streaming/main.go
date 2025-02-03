@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/option"
+	"github.com/Miuzarte/openai-go"
+	"github.com/Miuzarte/openai-go/option"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 # OpenAI Go API Library
 
-<a href="https://pkg.go.dev/github.com/openai/openai-go"><img src="https://pkg.go.dev/badge/github.com/openai/openai-go.svg" alt="Go Reference"></a>
+<a href="https://pkg.go.dev/github.com/Miuzarte/openai-go"><img src="https://pkg.go.dev/badge/github.com/Miuzarte/openai-go.svg" alt="Go Reference"></a>
 
 > [!WARNING]
 > **This release is currently in beta**. Minor breaking changes may occur.
@@ -14,7 +14,7 @@ API](https://platform.openai.com/docs) from applications written in Go. The full
 
 ```go
 import (
-	"github.com/openai/openai-go" // imported as openai
+	"github.com/Miuzarte/openai-go" // imported as openai
 )
 ```
 
@@ -25,7 +25,7 @@ Or to pin the version:
 <!-- x-release-please-start-version -->
 
 ```sh
-go get -u 'github.com/openai/openai-go@v0.1.0-alpha.51'
+go get -u 'github.com/Miuzarte/openai-go@v0.1.0-alpha.51'
 ```
 
 <!-- x-release-please-end -->
@@ -46,8 +46,8 @@ package main
 import (
 	"context"
 
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/option"
+	"github.com/Miuzarte/openai-go"
+	"github.com/Miuzarte/openai-go/option"
 )
 
 func main() {
@@ -373,7 +373,7 @@ client.Chat.Completions.New(context.TODO(), ...,
 )
 ```
 
-See the [full list of request options](https://pkg.go.dev/github.com/openai/openai-go/option).
+See the [full list of request options](https://pkg.go.dev/github.com/Miuzarte/openai-go/option).
 
 ### Pagination
 
@@ -620,8 +620,8 @@ package main
 
 import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/azure"
+	"github.com/Miuzarte/openai-go"
+	"github.com/Miuzarte/openai-go/azure"
 )
 
 func main() {
@@ -657,7 +657,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/openai/openai-go/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/Miuzarte/openai-go/issues) with questions, bugs, or suggestions.
 
 ## Contributing
 

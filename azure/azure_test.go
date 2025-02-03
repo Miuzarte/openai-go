@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go"
+	"github.com/Miuzarte/openai-go/internal/apijson"
 )
 
 func TestJSONRoute(t *testing.T) {
