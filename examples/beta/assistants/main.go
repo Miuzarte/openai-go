@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	"github.com/openai/openai-go"
+	"github.com/Miuzarte/openai-go"
 )
 
 func main() {
@@ -15,7 +15,6 @@ func main() {
 		Name:         openai.String("Math tutor"),
 		Instructions: openai.String("You are a personal math tutor. Write and run code to answer math questions."),
 	})
-
 	if err != nil {
 		panic(err.Error())
 	}
@@ -34,7 +33,6 @@ func main() {
 			},
 		},
 	})
-
 	if err != nil {
 		panic(err.Error())
 	}
@@ -46,14 +44,12 @@ func main() {
 		AssistantID:            assistant.ID,
 		AdditionalInstructions: openai.String("Please address the user as Jane Doe. The user has a premium account."),
 	}, 0)
-
 	if err != nil {
 		panic(err.Error())
 	}
 
 	if run.Status == openai.RunStatusCompleted {
 		messages, err := client.Beta.Threads.Messages.List(ctx, thread.ID, openai.BetaThreadMessageListParams{})
-
 		if err != nil {
 			panic(err.Error())
 		}

@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	internalparam "github.com/openai/openai-go/internal/param"
-	"github.com/openai/openai-go/packages/param"
+	internalparam "github.com/Miuzarte/openai-go/internal/param"
+	"github.com/Miuzarte/openai-go/packages/param"
 )
 
 var encoders sync.Map // map[encoderEntry]encoderFunc

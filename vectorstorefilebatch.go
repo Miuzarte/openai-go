@@ -10,14 +10,14 @@ import (
 	"net/url"
 	"sync"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // VectorStoreFileBatchService contains methods and other services that help with
@@ -213,6 +213,7 @@ type VectorStoreFileBatch struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFileBatch) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFileBatch) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -243,6 +244,7 @@ type VectorStoreFileBatchFileCounts struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFileBatchFileCounts) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFileBatchFileCounts) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -299,6 +301,7 @@ type VectorStoreFileBatchNewParamsAttributeUnion struct {
 func (u VectorStoreFileBatchNewParamsAttributeUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u VectorStoreFileBatchNewParamsAttributeUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[VectorStoreFileBatchNewParamsAttributeUnion](u.OfString, u.OfFloat, u.OfBool)
 }

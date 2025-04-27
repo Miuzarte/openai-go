@@ -5,10 +5,10 @@ package shared
 import (
 	"encoding/json"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // aliased to make [param.APIUnion] private when embedding
@@ -97,6 +97,7 @@ type ComparisonFilter struct {
 
 // Returns the unmodified JSON received from the API
 func (r ComparisonFilter) RawJSON() string { return r.JSON.raw }
+
 func (r *ComparisonFilter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -200,6 +201,7 @@ type ComparisonFilterParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ComparisonFilterParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ComparisonFilterParam) MarshalJSON() (data []byte, err error) {
 	type shadow ComparisonFilterParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -218,6 +220,7 @@ type ComparisonFilterValueUnionParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u ComparisonFilterValueUnionParam) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u ComparisonFilterValueUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ComparisonFilterValueUnionParam](u.OfString, u.OfFloat, u.OfBool)
 }
@@ -254,6 +257,7 @@ type CompoundFilter struct {
 
 // Returns the unmodified JSON received from the API
 func (r CompoundFilter) RawJSON() string { return r.JSON.raw }
+
 func (r *CompoundFilter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -292,6 +296,7 @@ type CompoundFilterParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f CompoundFilterParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r CompoundFilterParam) MarshalJSON() (data []byte, err error) {
 	type shadow CompoundFilterParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -316,6 +321,7 @@ type ErrorObject struct {
 
 // Returns the unmodified JSON received from the API
 func (r ErrorObject) RawJSON() string { return r.JSON.raw }
+
 func (r *ErrorObject) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -355,6 +361,7 @@ type FunctionDefinition struct {
 
 // Returns the unmodified JSON received from the API
 func (r FunctionDefinition) RawJSON() string { return r.JSON.raw }
+
 func (r *FunctionDefinition) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -396,6 +403,7 @@ type FunctionDefinitionParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f FunctionDefinitionParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r FunctionDefinitionParam) MarshalJSON() (data []byte, err error) {
 	type shadow FunctionDefinitionParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -441,6 +449,7 @@ type Reasoning struct {
 
 // Returns the unmodified JSON received from the API
 func (r Reasoning) RawJSON() string { return r.JSON.raw }
+
 func (r *Reasoning) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -494,6 +503,7 @@ type ReasoningParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ReasoningParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ReasoningParam) MarshalJSON() (data []byte, err error) {
 	type shadow ReasoningParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -530,6 +540,7 @@ type ResponseFormatJSONObject struct {
 
 // Returns the unmodified JSON received from the API
 func (r ResponseFormatJSONObject) RawJSON() string { return r.JSON.raw }
+
 func (r *ResponseFormatJSONObject) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -562,6 +573,7 @@ type ResponseFormatJSONObjectParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ResponseFormatJSONObjectParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ResponseFormatJSONObjectParam) MarshalJSON() (data []byte, err error) {
 	type shadow ResponseFormatJSONObjectParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -587,6 +599,7 @@ type ResponseFormatJSONSchema struct {
 
 // Returns the unmodified JSON received from the API
 func (r ResponseFormatJSONSchema) RawJSON() string { return r.JSON.raw }
+
 func (r *ResponseFormatJSONSchema) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -632,6 +645,7 @@ type ResponseFormatJSONSchemaJSONSchema struct {
 
 // Returns the unmodified JSON received from the API
 func (r ResponseFormatJSONSchemaJSONSchema) RawJSON() string { return r.JSON.raw }
+
 func (r *ResponseFormatJSONSchemaJSONSchema) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -654,6 +668,7 @@ type ResponseFormatJSONSchemaParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ResponseFormatJSONSchemaParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ResponseFormatJSONSchemaParam) MarshalJSON() (data []byte, err error) {
 	type shadow ResponseFormatJSONSchemaParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -686,6 +701,7 @@ type ResponseFormatJSONSchemaJSONSchemaParam struct {
 func (f ResponseFormatJSONSchemaJSONSchemaParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ResponseFormatJSONSchemaJSONSchemaParam) MarshalJSON() (data []byte, err error) {
 	type shadow ResponseFormatJSONSchemaJSONSchemaParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -706,6 +722,7 @@ type ResponseFormatText struct {
 
 // Returns the unmodified JSON received from the API
 func (r ResponseFormatText) RawJSON() string { return r.JSON.raw }
+
 func (r *ResponseFormatText) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -735,6 +752,7 @@ type ResponseFormatTextParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ResponseFormatTextParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ResponseFormatTextParam) MarshalJSON() (data []byte, err error) {
 	type shadow ResponseFormatTextParam
 	return param.MarshalObject(r, (*shadow)(&r))

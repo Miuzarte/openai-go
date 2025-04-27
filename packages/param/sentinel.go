@@ -1,7 +1,7 @@
 package param
 
 import (
-	"github.com/openai/openai-go/internal/encoding/json/sentinel"
+	"github.com/Miuzarte/openai-go/internal/encoding/json/sentinel"
 )
 
 // NullPtr returns a pointer to the zero value of the type T.

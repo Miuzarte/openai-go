@@ -11,15 +11,15 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 	"github.com/tidwall/gjson"
 )
 
@@ -204,6 +204,7 @@ type Assistant struct {
 
 // Returns the unmodified JSON received from the API
 func (r Assistant) RawJSON() string { return r.JSON.raw }
+
 func (r *Assistant) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -227,6 +228,7 @@ type AssistantToolResources struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantToolResources) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantToolResources) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -247,6 +249,7 @@ type AssistantToolResourcesCodeInterpreter struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantToolResourcesCodeInterpreter) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantToolResourcesCodeInterpreter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -268,6 +271,7 @@ type AssistantToolResourcesFileSearch struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantToolResourcesFileSearch) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantToolResourcesFileSearch) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -289,6 +293,7 @@ type AssistantDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -820,6 +825,7 @@ type AssistantStreamEventThreadCreated struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadCreated) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadCreated) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -843,6 +849,7 @@ type AssistantStreamEventThreadRunCreated struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunCreated) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunCreated) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -866,6 +873,7 @@ type AssistantStreamEventThreadRunQueued struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunQueued) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunQueued) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -889,6 +897,7 @@ type AssistantStreamEventThreadRunInProgress struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunInProgress) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunInProgress) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -912,6 +921,7 @@ type AssistantStreamEventThreadRunRequiresAction struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunRequiresAction) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunRequiresAction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -935,6 +945,7 @@ type AssistantStreamEventThreadRunCompleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunCompleted) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunCompleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -958,6 +969,7 @@ type AssistantStreamEventThreadRunIncomplete struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunIncomplete) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunIncomplete) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -981,6 +993,7 @@ type AssistantStreamEventThreadRunFailed struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunFailed) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunFailed) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1004,6 +1017,7 @@ type AssistantStreamEventThreadRunCancelling struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunCancelling) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunCancelling) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1027,6 +1041,7 @@ type AssistantStreamEventThreadRunCancelled struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunCancelled) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunCancelled) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1050,6 +1065,7 @@ type AssistantStreamEventThreadRunExpired struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunExpired) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunExpired) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1073,6 +1089,7 @@ type AssistantStreamEventThreadRunStepCreated struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepCreated) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepCreated) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1096,6 +1113,7 @@ type AssistantStreamEventThreadRunStepInProgress struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepInProgress) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepInProgress) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1120,6 +1138,7 @@ type AssistantStreamEventThreadRunStepDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1143,6 +1162,7 @@ type AssistantStreamEventThreadRunStepCompleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepCompleted) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepCompleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1166,6 +1186,7 @@ type AssistantStreamEventThreadRunStepFailed struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepFailed) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepFailed) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1189,6 +1210,7 @@ type AssistantStreamEventThreadRunStepCancelled struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepCancelled) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepCancelled) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1212,6 +1234,7 @@ type AssistantStreamEventThreadRunStepExpired struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadRunStepExpired) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadRunStepExpired) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1236,6 +1259,7 @@ type AssistantStreamEventThreadMessageCreated struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadMessageCreated) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadMessageCreated) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1260,6 +1284,7 @@ type AssistantStreamEventThreadMessageInProgress struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadMessageInProgress) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadMessageInProgress) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1284,6 +1309,7 @@ type AssistantStreamEventThreadMessageDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadMessageDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadMessageDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1308,6 +1334,7 @@ type AssistantStreamEventThreadMessageCompleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadMessageCompleted) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadMessageCompleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1332,6 +1359,7 @@ type AssistantStreamEventThreadMessageIncomplete struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventThreadMessageIncomplete) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventThreadMessageIncomplete) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1354,6 +1382,7 @@ type AssistantStreamEventErrorEvent struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantStreamEventErrorEvent) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantStreamEventErrorEvent) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1460,6 +1489,7 @@ type AssistantToolUnionParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u AssistantToolUnionParam) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u AssistantToolUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[AssistantToolUnionParam](u.OfCodeInterpreter, u.OfFileSearch, u.OfFunction)
 }
@@ -1538,6 +1568,7 @@ type CodeInterpreterTool struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterTool) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterTool) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1563,6 +1594,7 @@ type CodeInterpreterToolParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f CodeInterpreterToolParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r CodeInterpreterToolParam) MarshalJSON() (data []byte, err error) {
 	type shadow CodeInterpreterToolParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1585,6 +1617,7 @@ type FileSearchTool struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchTool) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchTool) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1628,6 +1661,7 @@ type FileSearchToolFileSearch struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolFileSearch) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolFileSearch) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1659,6 +1693,7 @@ type FileSearchToolFileSearchRankingOptions struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolFileSearchRankingOptions) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolFileSearchRankingOptions) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1677,6 +1712,7 @@ type FileSearchToolParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f FileSearchToolParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r FileSearchToolParam) MarshalJSON() (data []byte, err error) {
 	type shadow FileSearchToolParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1706,6 +1742,7 @@ type FileSearchToolFileSearchParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f FileSearchToolFileSearchParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r FileSearchToolFileSearchParam) MarshalJSON() (data []byte, err error) {
 	type shadow FileSearchToolFileSearchParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1736,6 +1773,7 @@ type FileSearchToolFileSearchRankingOptionsParam struct {
 func (f FileSearchToolFileSearchRankingOptionsParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FileSearchToolFileSearchRankingOptionsParam) MarshalJSON() (data []byte, err error) {
 	type shadow FileSearchToolFileSearchRankingOptionsParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1763,6 +1801,7 @@ type FunctionTool struct {
 
 // Returns the unmodified JSON received from the API
 func (r FunctionTool) RawJSON() string { return r.JSON.raw }
+
 func (r *FunctionTool) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1789,6 +1828,7 @@ type FunctionToolParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f FunctionToolParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r FunctionToolParam) MarshalJSON() (data []byte, err error) {
 	type shadow FunctionToolParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1891,6 +1931,7 @@ type BetaAssistantNewParamsToolResources struct {
 func (f BetaAssistantNewParamsToolResources) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResources) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResources
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1909,6 +1950,7 @@ type BetaAssistantNewParamsToolResourcesCodeInterpreter struct {
 func (f BetaAssistantNewParamsToolResourcesCodeInterpreter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResourcesCodeInterpreter) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResourcesCodeInterpreter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1933,6 +1975,7 @@ type BetaAssistantNewParamsToolResourcesFileSearch struct {
 func (f BetaAssistantNewParamsToolResourcesFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResourcesFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResourcesFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1961,6 +2004,7 @@ type BetaAssistantNewParamsToolResourcesFileSearchVectorStore struct {
 func (f BetaAssistantNewParamsToolResourcesFileSearchVectorStore) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResourcesFileSearchVectorStore) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResourcesFileSearchVectorStore
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1980,6 +2024,7 @@ type BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUni
 func (u BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion](u.OfAuto, u.OfStatic)
 }
@@ -2044,6 +2089,7 @@ type BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAut
 func (f BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2064,6 +2110,7 @@ type BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategySta
 func (f BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2086,6 +2133,7 @@ type BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategySta
 func (f BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2228,6 +2276,7 @@ type BetaAssistantUpdateParamsToolResources struct {
 func (f BetaAssistantUpdateParamsToolResources) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantUpdateParamsToolResources) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantUpdateParamsToolResources
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2247,6 +2296,7 @@ type BetaAssistantUpdateParamsToolResourcesCodeInterpreter struct {
 func (f BetaAssistantUpdateParamsToolResourcesCodeInterpreter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantUpdateParamsToolResourcesCodeInterpreter) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantUpdateParamsToolResourcesCodeInterpreter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2266,6 +2316,7 @@ type BetaAssistantUpdateParamsToolResourcesFileSearch struct {
 func (f BetaAssistantUpdateParamsToolResourcesFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaAssistantUpdateParamsToolResourcesFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaAssistantUpdateParamsToolResourcesFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))

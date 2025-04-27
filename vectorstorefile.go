@@ -10,14 +10,14 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // VectorStoreFileService contains methods and other services that help with
@@ -257,6 +257,7 @@ type VectorStoreFile struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFile) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFile) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -282,6 +283,7 @@ type VectorStoreFileLastError struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFileLastError) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFileLastError) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -359,6 +361,7 @@ type VectorStoreFileDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFileDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFileDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -380,6 +383,7 @@ type VectorStoreFileContentResponse struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFileContentResponse) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFileContentResponse) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -425,6 +429,7 @@ type VectorStoreFileNewParamsAttributeUnion struct {
 func (u VectorStoreFileNewParamsAttributeUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u VectorStoreFileNewParamsAttributeUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[VectorStoreFileNewParamsAttributeUnion](u.OfString, u.OfFloat, u.OfBool)
 }
@@ -474,6 +479,7 @@ type VectorStoreFileUpdateParamsAttributeUnion struct {
 func (u VectorStoreFileUpdateParamsAttributeUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u VectorStoreFileUpdateParamsAttributeUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[VectorStoreFileUpdateParamsAttributeUnion](u.OfString, u.OfFloat, u.OfBool)
 }

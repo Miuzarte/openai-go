@@ -1,9 +1,10 @@
 package openai
 
 import (
-	"github.com/openai/openai-go/packages/param"
 	"io"
 	"time"
+
+	"github.com/Miuzarte/openai-go/packages/param"
 )
 
 func String(s string) param.Opt[string]     { return param.NewOpt(s) }

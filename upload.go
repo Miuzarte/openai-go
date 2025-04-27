@@ -8,12 +8,12 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // UploadService contains methods and other services that help with interacting
@@ -142,6 +142,7 @@ type Upload struct {
 
 // Returns the unmodified JSON received from the API
 func (r Upload) RawJSON() string { return r.JSON.raw }
+
 func (r *Upload) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }

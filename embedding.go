@@ -6,12 +6,12 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // EmbeddingService contains methods and other services that help with interacting
@@ -64,6 +64,7 @@ type CreateEmbeddingResponse struct {
 
 // Returns the unmodified JSON received from the API
 func (r CreateEmbeddingResponse) RawJSON() string { return r.JSON.raw }
+
 func (r *CreateEmbeddingResponse) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -86,6 +87,7 @@ type CreateEmbeddingResponseUsage struct {
 
 // Returns the unmodified JSON received from the API
 func (r CreateEmbeddingResponseUsage) RawJSON() string { return r.JSON.raw }
+
 func (r *CreateEmbeddingResponseUsage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -113,6 +115,7 @@ type Embedding struct {
 
 // Returns the unmodified JSON received from the API
 func (r Embedding) RawJSON() string { return r.JSON.raw }
+
 func (r *Embedding) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -179,6 +182,7 @@ type EmbeddingNewParamsInputUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u EmbeddingNewParamsInputUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u EmbeddingNewParamsInputUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[EmbeddingNewParamsInputUnion](u.OfString, u.OfArrayOfStrings, u.OfArrayOfTokens, u.OfArrayOfTokenArrays)
 }

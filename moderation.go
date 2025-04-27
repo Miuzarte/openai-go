@@ -7,12 +7,12 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 	"github.com/tidwall/gjson"
 )
 
@@ -67,6 +67,7 @@ type Moderation struct {
 
 // Returns the unmodified JSON received from the API
 func (r Moderation) RawJSON() string { return r.JSON.raw }
+
 func (r *Moderation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -139,6 +140,7 @@ type ModerationCategories struct {
 
 // Returns the unmodified JSON received from the API
 func (r ModerationCategories) RawJSON() string { return r.JSON.raw }
+
 func (r *ModerationCategories) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -220,6 +222,7 @@ type ModerationCategoryAppliedInputTypes struct {
 
 // Returns the unmodified JSON received from the API
 func (r ModerationCategoryAppliedInputTypes) RawJSON() string { return r.JSON.raw }
+
 func (r *ModerationCategoryAppliedInputTypes) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -275,6 +278,7 @@ type ModerationCategoryScores struct {
 
 // Returns the unmodified JSON received from the API
 func (r ModerationCategoryScores) RawJSON() string { return r.JSON.raw }
+
 func (r *ModerationCategoryScores) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -295,6 +299,7 @@ type ModerationImageURLInputParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ModerationImageURLInputParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ModerationImageURLInputParam) MarshalJSON() (data []byte, err error) {
 	type shadow ModerationImageURLInputParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -314,6 +319,7 @@ type ModerationImageURLInputImageURLParam struct {
 func (f ModerationImageURLInputImageURLParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ModerationImageURLInputImageURLParam) MarshalJSON() (data []byte, err error) {
 	type shadow ModerationImageURLInputImageURLParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -354,6 +360,7 @@ type ModerationMultiModalInputUnionParam struct {
 func (u ModerationMultiModalInputUnionParam) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ModerationMultiModalInputUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ModerationMultiModalInputUnionParam](u.OfImageURL, u.OfText)
 }
@@ -425,6 +432,7 @@ type ModerationTextInputParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ModerationTextInputParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ModerationTextInputParam) MarshalJSON() (data []byte, err error) {
 	type shadow ModerationTextInputParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -451,6 +459,7 @@ type ModerationNewResponse struct {
 
 // Returns the unmodified JSON received from the API
 func (r ModerationNewResponse) RawJSON() string { return r.JSON.raw }
+
 func (r *ModerationNewResponse) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -489,6 +498,7 @@ type ModerationNewParamsInputUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u ModerationNewParamsInputUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u ModerationNewParamsInputUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ModerationNewParamsInputUnion](u.OfString, u.OfModerationNewsInputArray, u.OfModerationMultiModalArray)
 }

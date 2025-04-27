@@ -13,7 +13,7 @@ import (
 
 	"github.com/tidwall/sjson"
 
-	"github.com/openai/openai-go/internal/param"
+	"github.com/Miuzarte/openai-go/internal/param"
 )
 
 var encoders sync.Map // map[encoderEntry]encoderFunc
@@ -181,7 +181,7 @@ func (e *encoder) newArrayTypeEncoder(t reflect.Type) encoderFunc {
 	return func(value reflect.Value) ([]byte, error) {
 		json := []byte("[]")
 		for i := 0; i < value.Len(); i++ {
-			var value, err = itemEncoder(value.Index(i))
+			value, err := itemEncoder(value.Index(i))
 			if err != nil {
 				return nil, err
 			}

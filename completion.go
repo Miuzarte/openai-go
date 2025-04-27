@@ -6,13 +6,13 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/packages/ssestream"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/packages/ssestream"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // CompletionService contains methods and other services that help with interacting
@@ -92,6 +92,7 @@ type Completion struct {
 
 // Returns the unmodified JSON received from the API
 func (r Completion) RawJSON() string { return r.JSON.raw }
+
 func (r *Completion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -121,6 +122,7 @@ type CompletionChoice struct {
 
 // Returns the unmodified JSON received from the API
 func (r CompletionChoice) RawJSON() string { return r.JSON.raw }
+
 func (r *CompletionChoice) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -156,6 +158,7 @@ type CompletionChoiceLogprobs struct {
 
 // Returns the unmodified JSON received from the API
 func (r CompletionChoiceLogprobs) RawJSON() string { return r.JSON.raw }
+
 func (r *CompletionChoiceLogprobs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -187,6 +190,7 @@ type CompletionUsage struct {
 
 // Returns the unmodified JSON received from the API
 func (r CompletionUsage) RawJSON() string { return r.JSON.raw }
+
 func (r *CompletionUsage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -219,6 +223,7 @@ type CompletionUsageCompletionTokensDetails struct {
 
 // Returns the unmodified JSON received from the API
 func (r CompletionUsageCompletionTokensDetails) RawJSON() string { return r.JSON.raw }
+
 func (r *CompletionUsageCompletionTokensDetails) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -241,6 +246,7 @@ type CompletionUsagePromptTokensDetails struct {
 
 // Returns the unmodified JSON received from the API
 func (r CompletionUsagePromptTokensDetails) RawJSON() string { return r.JSON.raw }
+
 func (r *CompletionUsagePromptTokensDetails) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -388,6 +394,7 @@ type CompletionNewParamsPromptUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u CompletionNewParamsPromptUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u CompletionNewParamsPromptUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[CompletionNewParamsPromptUnion](u.OfString, u.OfArrayOfStrings, u.OfArrayOfTokens, u.OfArrayOfTokenArrays)
 }
@@ -417,6 +424,7 @@ type CompletionNewParamsStopUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u CompletionNewParamsStopUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u CompletionNewParamsStopUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[CompletionNewParamsStopUnion](u.OfString, u.OfCompletionNewsStopArray)
 }

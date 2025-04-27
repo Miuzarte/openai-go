@@ -10,15 +10,15 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // FineTuningJobService contains methods and other services that help with
@@ -222,6 +222,7 @@ type FineTuningJob struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJob) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJob) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -249,6 +250,7 @@ type FineTuningJobError struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobError) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobError) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -278,6 +280,7 @@ type FineTuningJobHyperparameters struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobHyperparameters) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobHyperparameters) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -429,6 +432,7 @@ type FineTuningJobMethod struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobMethod) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobMethod) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -448,6 +452,7 @@ type FineTuningJobMethodDpo struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobMethodDpo) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobMethodDpo) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -480,6 +485,7 @@ type FineTuningJobMethodDpoHyperparameters struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobMethodDpoHyperparameters) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobMethodDpoHyperparameters) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -649,6 +655,7 @@ type FineTuningJobMethodSupervised struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobMethodSupervised) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobMethodSupervised) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -677,6 +684,7 @@ type FineTuningJobMethodSupervisedHyperparameters struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobMethodSupervisedHyperparameters) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobMethodSupervisedHyperparameters) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -833,6 +841,7 @@ type FineTuningJobEvent struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobEvent) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobEvent) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -886,6 +895,7 @@ type FineTuningJobWandbIntegration struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobWandbIntegration) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobWandbIntegration) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -910,6 +920,7 @@ type FineTuningJobWandbIntegrationObject struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobWandbIntegrationObject) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobWandbIntegrationObject) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1018,6 +1029,7 @@ type FineTuningJobNewParamsHyperparameters struct {
 func (f FineTuningJobNewParamsHyperparameters) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FineTuningJobNewParamsHyperparameters) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsHyperparameters
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1039,6 +1051,7 @@ type FineTuningJobNewParamsHyperparametersBatchSizeUnion struct {
 func (u FineTuningJobNewParamsHyperparametersBatchSizeUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsHyperparametersBatchSizeUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsHyperparametersBatchSizeUnion](u.OfAuto, u.OfInt)
 }
@@ -1068,6 +1081,7 @@ type FineTuningJobNewParamsHyperparametersLearningRateMultiplierUnion struct {
 func (u FineTuningJobNewParamsHyperparametersLearningRateMultiplierUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsHyperparametersLearningRateMultiplierUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsHyperparametersLearningRateMultiplierUnion](u.OfAuto, u.OfFloat)
 }
@@ -1097,6 +1111,7 @@ type FineTuningJobNewParamsHyperparametersNEpochsUnion struct {
 func (u FineTuningJobNewParamsHyperparametersNEpochsUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsHyperparametersNEpochsUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsHyperparametersNEpochsUnion](u.OfAuto, u.OfInt)
 }
@@ -1130,6 +1145,7 @@ type FineTuningJobNewParamsIntegration struct {
 func (f FineTuningJobNewParamsIntegration) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FineTuningJobNewParamsIntegration) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsIntegration
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1163,6 +1179,7 @@ type FineTuningJobNewParamsIntegrationWandb struct {
 func (f FineTuningJobNewParamsIntegrationWandb) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FineTuningJobNewParamsIntegrationWandb) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsIntegrationWandb
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1184,6 +1201,7 @@ type FineTuningJobNewParamsMethod struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f FineTuningJobNewParamsMethod) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r FineTuningJobNewParamsMethod) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsMethod
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1205,6 +1223,7 @@ type FineTuningJobNewParamsMethodDpo struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f FineTuningJobNewParamsMethodDpo) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r FineTuningJobNewParamsMethodDpo) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsMethodDpo
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1232,6 +1251,7 @@ type FineTuningJobNewParamsMethodDpoHyperparameters struct {
 func (f FineTuningJobNewParamsMethodDpoHyperparameters) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FineTuningJobNewParamsMethodDpoHyperparameters) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsMethodDpoHyperparameters
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1253,6 +1273,7 @@ type FineTuningJobNewParamsMethodDpoHyperparametersBatchSizeUnion struct {
 func (u FineTuningJobNewParamsMethodDpoHyperparametersBatchSizeUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodDpoHyperparametersBatchSizeUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodDpoHyperparametersBatchSizeUnion](u.OfAuto, u.OfInt)
 }
@@ -1282,6 +1303,7 @@ type FineTuningJobNewParamsMethodDpoHyperparametersBetaUnion struct {
 func (u FineTuningJobNewParamsMethodDpoHyperparametersBetaUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodDpoHyperparametersBetaUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodDpoHyperparametersBetaUnion](u.OfAuto, u.OfFloat)
 }
@@ -1311,6 +1333,7 @@ type FineTuningJobNewParamsMethodDpoHyperparametersLearningRateMultiplierUnion s
 func (u FineTuningJobNewParamsMethodDpoHyperparametersLearningRateMultiplierUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodDpoHyperparametersLearningRateMultiplierUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodDpoHyperparametersLearningRateMultiplierUnion](u.OfAuto, u.OfFloat)
 }
@@ -1340,6 +1363,7 @@ type FineTuningJobNewParamsMethodDpoHyperparametersNEpochsUnion struct {
 func (u FineTuningJobNewParamsMethodDpoHyperparametersNEpochsUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodDpoHyperparametersNEpochsUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodDpoHyperparametersNEpochsUnion](u.OfAuto, u.OfInt)
 }
@@ -1365,6 +1389,7 @@ type FineTuningJobNewParamsMethodSupervised struct {
 func (f FineTuningJobNewParamsMethodSupervised) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FineTuningJobNewParamsMethodSupervised) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsMethodSupervised
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1389,6 +1414,7 @@ type FineTuningJobNewParamsMethodSupervisedHyperparameters struct {
 func (f FineTuningJobNewParamsMethodSupervisedHyperparameters) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r FineTuningJobNewParamsMethodSupervisedHyperparameters) MarshalJSON() (data []byte, err error) {
 	type shadow FineTuningJobNewParamsMethodSupervisedHyperparameters
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1410,6 +1436,7 @@ type FineTuningJobNewParamsMethodSupervisedHyperparametersBatchSizeUnion struct 
 func (u FineTuningJobNewParamsMethodSupervisedHyperparametersBatchSizeUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodSupervisedHyperparametersBatchSizeUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodSupervisedHyperparametersBatchSizeUnion](u.OfAuto, u.OfInt)
 }
@@ -1439,6 +1466,7 @@ type FineTuningJobNewParamsMethodSupervisedHyperparametersLearningRateMultiplier
 func (u FineTuningJobNewParamsMethodSupervisedHyperparametersLearningRateMultiplierUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodSupervisedHyperparametersLearningRateMultiplierUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodSupervisedHyperparametersLearningRateMultiplierUnion](u.OfAuto, u.OfFloat)
 }
@@ -1468,6 +1496,7 @@ type FineTuningJobNewParamsMethodSupervisedHyperparametersNEpochsUnion struct {
 func (u FineTuningJobNewParamsMethodSupervisedHyperparametersNEpochsUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u FineTuningJobNewParamsMethodSupervisedHyperparametersNEpochsUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FineTuningJobNewParamsMethodSupervisedHyperparametersNEpochsUnion](u.OfAuto, u.OfInt)
 }

@@ -11,15 +11,15 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 	"github.com/tidwall/gjson"
 )
 
@@ -303,6 +303,7 @@ type FileCitationAnnotation struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileCitationAnnotation) RawJSON() string { return r.JSON.raw }
+
 func (r *FileCitationAnnotation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -321,6 +322,7 @@ type FileCitationAnnotationFileCitation struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileCitationAnnotationFileCitation) RawJSON() string { return r.JSON.raw }
+
 func (r *FileCitationAnnotationFileCitation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -354,6 +356,7 @@ type FileCitationDeltaAnnotation struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileCitationDeltaAnnotation) RawJSON() string { return r.JSON.raw }
+
 func (r *FileCitationDeltaAnnotation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -375,6 +378,7 @@ type FileCitationDeltaAnnotationFileCitation struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileCitationDeltaAnnotationFileCitation) RawJSON() string { return r.JSON.raw }
+
 func (r *FileCitationDeltaAnnotationFileCitation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -404,6 +408,7 @@ type FilePathAnnotation struct {
 
 // Returns the unmodified JSON received from the API
 func (r FilePathAnnotation) RawJSON() string { return r.JSON.raw }
+
 func (r *FilePathAnnotation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -422,6 +427,7 @@ type FilePathAnnotationFilePath struct {
 
 // Returns the unmodified JSON received from the API
 func (r FilePathAnnotationFilePath) RawJSON() string { return r.JSON.raw }
+
 func (r *FilePathAnnotationFilePath) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -454,6 +460,7 @@ type FilePathDeltaAnnotation struct {
 
 // Returns the unmodified JSON received from the API
 func (r FilePathDeltaAnnotation) RawJSON() string { return r.JSON.raw }
+
 func (r *FilePathDeltaAnnotation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -472,6 +479,7 @@ type FilePathDeltaAnnotationFilePath struct {
 
 // Returns the unmodified JSON received from the API
 func (r FilePathDeltaAnnotationFilePath) RawJSON() string { return r.JSON.raw }
+
 func (r *FilePathDeltaAnnotationFilePath) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -498,6 +506,7 @@ type ImageFile struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageFile) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageFile) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -538,6 +547,7 @@ type ImageFileParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ImageFileParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ImageFileParam) MarshalJSON() (data []byte, err error) {
 	type shadow ImageFileParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -561,6 +571,7 @@ type ImageFileContentBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageFileContentBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageFileContentBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -590,6 +601,7 @@ type ImageFileContentBlockParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ImageFileContentBlockParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ImageFileContentBlockParam) MarshalJSON() (data []byte, err error) {
 	type shadow ImageFileContentBlockParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -617,6 +629,7 @@ type ImageFileDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageFileDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageFileDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -652,6 +665,7 @@ type ImageFileDeltaBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageFileDeltaBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageFileDeltaBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -677,6 +691,7 @@ type ImageURL struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageURL) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageURL) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -716,6 +731,7 @@ type ImageURLParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ImageURLParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ImageURLParam) MarshalJSON() (data []byte, err error) {
 	type shadow ImageURLParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -738,6 +754,7 @@ type ImageURLContentBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageURLContentBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageURLContentBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -766,6 +783,7 @@ type ImageURLContentBlockParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ImageURLContentBlockParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ImageURLContentBlockParam) MarshalJSON() (data []byte, err error) {
 	type shadow ImageURLContentBlockParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -792,6 +810,7 @@ type ImageURLDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageURLDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageURLDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -826,6 +845,7 @@ type ImageURLDeltaBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r ImageURLDeltaBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *ImageURLDeltaBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -900,6 +920,7 @@ type Message struct {
 
 // Returns the unmodified JSON received from the API
 func (r Message) RawJSON() string { return r.JSON.raw }
+
 func (r *Message) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -921,6 +942,7 @@ type MessageAttachment struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageAttachment) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageAttachment) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -968,6 +990,7 @@ type MessageAttachmentToolAssistantToolsFileSearchTypeOnly struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageAttachmentToolAssistantToolsFileSearchTypeOnly) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageAttachmentToolAssistantToolsFileSearchTypeOnly) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -990,6 +1013,7 @@ type MessageIncompleteDetails struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageIncompleteDetails) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageIncompleteDetails) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1226,6 +1250,7 @@ type MessageContentPartParamUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u MessageContentPartParamUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u MessageContentPartParamUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[MessageContentPartParamUnion](u.OfImageFile, u.OfImageURL, u.OfText)
 }
@@ -1315,6 +1340,7 @@ type MessageDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1339,6 +1365,7 @@ type MessageDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1373,6 +1400,7 @@ type MessageDeltaEvent struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageDeltaEvent) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageDeltaEvent) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1394,6 +1422,7 @@ type RefusalContentBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r RefusalContentBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *RefusalContentBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1418,6 +1447,7 @@ type RefusalDeltaBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r RefusalDeltaBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *RefusalDeltaBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1438,6 +1468,7 @@ type Text struct {
 
 // Returns the unmodified JSON received from the API
 func (r Text) RawJSON() string { return r.JSON.raw }
+
 func (r *Text) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1459,6 +1490,7 @@ type TextContentBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r TextContentBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *TextContentBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1479,6 +1511,7 @@ type TextContentBlockParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f TextContentBlockParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r TextContentBlockParam) MarshalJSON() (data []byte, err error) {
 	type shadow TextContentBlockParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1500,6 +1533,7 @@ type TextDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r TextDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *TextDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1524,6 +1558,7 @@ type TextDeltaBlock struct {
 
 // Returns the unmodified JSON received from the API
 func (r TextDeltaBlock) RawJSON() string { return r.JSON.raw }
+
 func (r *TextDeltaBlock) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1575,6 +1610,7 @@ type BetaThreadMessageNewParamsContentUnion struct {
 func (u BetaThreadMessageNewParamsContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadMessageNewParamsContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadMessageNewParamsContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -1614,6 +1650,7 @@ type BetaThreadMessageNewParamsAttachment struct {
 func (f BetaThreadMessageNewParamsAttachment) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadMessageNewParamsAttachment) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadMessageNewParamsAttachment
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1633,6 +1670,7 @@ type BetaThreadMessageNewParamsAttachmentToolUnion struct {
 func (u BetaThreadMessageNewParamsAttachmentToolUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadMessageNewParamsAttachmentToolUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadMessageNewParamsAttachmentToolUnion](u.OfCodeInterpreter, u.OfFileSearch)
 }
@@ -1686,6 +1724,7 @@ type BetaThreadMessageNewParamsAttachmentToolFileSearch struct {
 func (f BetaThreadMessageNewParamsAttachmentToolFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadMessageNewParamsAttachmentToolFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadMessageNewParamsAttachmentToolFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))

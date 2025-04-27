@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
 )
 
 // aliased to make [param.APIUnion] private when embedding
@@ -36,6 +36,7 @@ type Page[T any] struct {
 
 // Returns the unmodified JSON received from the API
 func (r Page[T]) RawJSON() string { return r.JSON.raw }
+
 func (r *Page[T]) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -131,6 +132,7 @@ type CursorPage[T any] struct {
 
 // Returns the unmodified JSON received from the API
 func (r CursorPage[T]) RawJSON() string { return r.JSON.raw }
+
 func (r *CursorPage[T]) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }

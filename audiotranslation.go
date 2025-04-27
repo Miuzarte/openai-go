@@ -9,12 +9,12 @@ import (
 	"mime/multipart"
 	"net/http"
 
-	"github.com/openai/openai-go/internal/apiform"
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/internal/apiform"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
 )
 
 // AudioTranslationService contains methods and other services that help with
@@ -57,6 +57,7 @@ type Translation struct {
 
 // Returns the unmodified JSON received from the API
 func (r Translation) RawJSON() string { return r.JSON.raw }
+
 func (r *Translation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }

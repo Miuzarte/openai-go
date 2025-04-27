@@ -10,14 +10,14 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/packages/ssestream"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/packages/ssestream"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 	"github.com/tidwall/gjson"
 )
 
@@ -211,6 +211,7 @@ type AssistantResponseFormatOptionUnionParam struct {
 func (u AssistantResponseFormatOptionUnionParam) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u AssistantResponseFormatOptionUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[AssistantResponseFormatOptionUnionParam](u.OfAuto, u.OfText, u.OfJSONObject, u.OfJSONSchema)
 }
@@ -268,6 +269,7 @@ type AssistantToolChoice struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantToolChoice) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantToolChoice) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -306,6 +308,7 @@ type AssistantToolChoiceParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f AssistantToolChoiceParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r AssistantToolChoiceParam) MarshalJSON() (data []byte, err error) {
 	type shadow AssistantToolChoiceParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -325,6 +328,7 @@ type AssistantToolChoiceFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r AssistantToolChoiceFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *AssistantToolChoiceFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -349,6 +353,7 @@ type AssistantToolChoiceFunctionParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f AssistantToolChoiceFunctionParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r AssistantToolChoiceFunctionParam) MarshalJSON() (data []byte, err error) {
 	type shadow AssistantToolChoiceFunctionParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -436,6 +441,7 @@ type AssistantToolChoiceOptionUnionParam struct {
 func (u AssistantToolChoiceOptionUnionParam) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u AssistantToolChoiceOptionUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[AssistantToolChoiceOptionUnionParam](u.OfAuto, u.OfAssistantToolChoice)
 }
@@ -501,6 +507,7 @@ type Thread struct {
 
 // Returns the unmodified JSON received from the API
 func (r Thread) RawJSON() string { return r.JSON.raw }
+
 func (r *Thread) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -524,6 +531,7 @@ type ThreadToolResources struct {
 
 // Returns the unmodified JSON received from the API
 func (r ThreadToolResources) RawJSON() string { return r.JSON.raw }
+
 func (r *ThreadToolResources) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -544,6 +552,7 @@ type ThreadToolResourcesCodeInterpreter struct {
 
 // Returns the unmodified JSON received from the API
 func (r ThreadToolResourcesCodeInterpreter) RawJSON() string { return r.JSON.raw }
+
 func (r *ThreadToolResourcesCodeInterpreter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -565,6 +574,7 @@ type ThreadToolResourcesFileSearch struct {
 
 // Returns the unmodified JSON received from the API
 func (r ThreadToolResourcesFileSearch) RawJSON() string { return r.JSON.raw }
+
 func (r *ThreadToolResourcesFileSearch) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -586,6 +596,7 @@ type ThreadDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r ThreadDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *ThreadDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -646,6 +657,7 @@ type BetaThreadNewParamsMessage struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f BetaThreadNewParamsMessage) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r BetaThreadNewParamsMessage) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsMessage
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -671,6 +683,7 @@ type BetaThreadNewParamsMessageContentUnion struct {
 func (u BetaThreadNewParamsMessageContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewParamsMessageContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewParamsMessageContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -697,6 +710,7 @@ type BetaThreadNewParamsMessageAttachment struct {
 func (f BetaThreadNewParamsMessageAttachment) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsMessageAttachment) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsMessageAttachment
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -716,6 +730,7 @@ type BetaThreadNewParamsMessageAttachmentToolUnion struct {
 func (u BetaThreadNewParamsMessageAttachmentToolUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewParamsMessageAttachmentToolUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewParamsMessageAttachmentToolUnion](u.OfCodeInterpreter, u.OfFileSearch)
 }
@@ -769,6 +784,7 @@ type BetaThreadNewParamsMessageAttachmentToolFileSearch struct {
 func (f BetaThreadNewParamsMessageAttachmentToolFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsMessageAttachmentToolFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsMessageAttachmentToolFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -787,6 +803,7 @@ type BetaThreadNewParamsToolResources struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f BetaThreadNewParamsToolResources) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r BetaThreadNewParamsToolResources) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResources
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -805,6 +822,7 @@ type BetaThreadNewParamsToolResourcesCodeInterpreter struct {
 func (f BetaThreadNewParamsToolResourcesCodeInterpreter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsToolResourcesCodeInterpreter) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResourcesCodeInterpreter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -829,6 +847,7 @@ type BetaThreadNewParamsToolResourcesFileSearch struct {
 func (f BetaThreadNewParamsToolResourcesFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsToolResourcesFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResourcesFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -857,6 +876,7 @@ type BetaThreadNewParamsToolResourcesFileSearchVectorStore struct {
 func (f BetaThreadNewParamsToolResourcesFileSearchVectorStore) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsToolResourcesFileSearchVectorStore) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResourcesFileSearchVectorStore
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -876,6 +896,7 @@ type BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion 
 func (u BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyUnion](u.OfAuto, u.OfStatic)
 }
@@ -940,6 +961,7 @@ type BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto s
 func (f BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyAuto
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -960,6 +982,7 @@ type BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic
 func (f BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -982,6 +1005,7 @@ type BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStatic
 func (f BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewParamsToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1027,6 +1051,7 @@ type BetaThreadUpdateParamsToolResources struct {
 func (f BetaThreadUpdateParamsToolResources) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadUpdateParamsToolResources) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadUpdateParamsToolResources
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1045,6 +1070,7 @@ type BetaThreadUpdateParamsToolResourcesCodeInterpreter struct {
 func (f BetaThreadUpdateParamsToolResourcesCodeInterpreter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadUpdateParamsToolResourcesCodeInterpreter) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadUpdateParamsToolResourcesCodeInterpreter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1064,6 +1090,7 @@ type BetaThreadUpdateParamsToolResourcesFileSearch struct {
 func (f BetaThreadUpdateParamsToolResourcesFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadUpdateParamsToolResourcesFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadUpdateParamsToolResourcesFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1194,6 +1221,7 @@ type BetaThreadNewAndRunParamsThread struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f BetaThreadNewAndRunParamsThread) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r BetaThreadNewAndRunParamsThread) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThread
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1229,6 +1257,7 @@ type BetaThreadNewAndRunParamsThreadMessage struct {
 func (f BetaThreadNewAndRunParamsThreadMessage) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadMessage) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadMessage
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1254,6 +1283,7 @@ type BetaThreadNewAndRunParamsThreadMessageContentUnion struct {
 func (u BetaThreadNewAndRunParamsThreadMessageContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewAndRunParamsThreadMessageContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewAndRunParamsThreadMessageContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -1280,6 +1310,7 @@ type BetaThreadNewAndRunParamsThreadMessageAttachment struct {
 func (f BetaThreadNewAndRunParamsThreadMessageAttachment) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadMessageAttachment) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadMessageAttachment
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1299,6 +1330,7 @@ type BetaThreadNewAndRunParamsThreadMessageAttachmentToolUnion struct {
 func (u BetaThreadNewAndRunParamsThreadMessageAttachmentToolUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewAndRunParamsThreadMessageAttachmentToolUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewAndRunParamsThreadMessageAttachmentToolUnion](u.OfCodeInterpreter, u.OfFileSearch)
 }
@@ -1352,6 +1384,7 @@ type BetaThreadNewAndRunParamsThreadMessageAttachmentToolFileSearch struct {
 func (f BetaThreadNewAndRunParamsThreadMessageAttachmentToolFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadMessageAttachmentToolFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadMessageAttachmentToolFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1372,6 +1405,7 @@ type BetaThreadNewAndRunParamsThreadToolResources struct {
 func (f BetaThreadNewAndRunParamsThreadToolResources) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResources) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResources
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1390,6 +1424,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesCodeInterpreter struct {
 func (f BetaThreadNewAndRunParamsThreadToolResourcesCodeInterpreter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResourcesCodeInterpreter) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResourcesCodeInterpreter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1414,6 +1449,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesFileSearch struct {
 func (f BetaThreadNewAndRunParamsThreadToolResourcesFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResourcesFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResourcesFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1442,6 +1478,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStore struct {
 func (f BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStore) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStore) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStore
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1461,6 +1498,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingSt
 func (u BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyUnion](u.OfAuto, u.OfStatic)
 }
@@ -1525,6 +1563,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingSt
 func (f BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyAuto) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyAuto) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyAuto
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1545,6 +1584,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingSt
 func (f BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyStatic) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyStatic) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyStatic
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1567,6 +1607,7 @@ type BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingSt
 func (f BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsThreadToolResourcesFileSearchVectorStoreChunkingStrategyStaticStatic
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1587,6 +1628,7 @@ type BetaThreadNewAndRunParamsToolResources struct {
 func (f BetaThreadNewAndRunParamsToolResources) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsToolResources) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsToolResources
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1605,6 +1647,7 @@ type BetaThreadNewAndRunParamsToolResourcesCodeInterpreter struct {
 func (f BetaThreadNewAndRunParamsToolResourcesCodeInterpreter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsToolResourcesCodeInterpreter) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsToolResourcesCodeInterpreter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1624,6 +1667,7 @@ type BetaThreadNewAndRunParamsToolResourcesFileSearch struct {
 func (f BetaThreadNewAndRunParamsToolResourcesFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsToolResourcesFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsToolResourcesFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1644,6 +1688,7 @@ type BetaThreadNewAndRunParamsToolUnion struct {
 func (u BetaThreadNewAndRunParamsToolUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadNewAndRunParamsToolUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadNewAndRunParamsToolUnion](u.OfCodeInterpreterTool, u.OfFileSearchTool, u.OfFunctionTool)
 }
@@ -1710,6 +1755,7 @@ type BetaThreadNewAndRunParamsTruncationStrategy struct {
 func (f BetaThreadNewAndRunParamsTruncationStrategy) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadNewAndRunParamsTruncationStrategy) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadNewAndRunParamsTruncationStrategy
 	return param.MarshalObject(r, (*shadow)(&r))

@@ -11,15 +11,15 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 	"github.com/tidwall/gjson"
 )
 
@@ -161,6 +161,7 @@ type AutoFileChunkingStrategyParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f AutoFileChunkingStrategyParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r AutoFileChunkingStrategyParam) MarshalJSON() (data []byte, err error) {
 	type shadow AutoFileChunkingStrategyParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -247,6 +248,7 @@ type FileChunkingStrategyParamUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u FileChunkingStrategyParamUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u FileChunkingStrategyParamUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[FileChunkingStrategyParamUnion](u.OfAuto, u.OfStatic)
 }
@@ -311,6 +313,7 @@ type OtherFileChunkingStrategyObject struct {
 
 // Returns the unmodified JSON received from the API
 func (r OtherFileChunkingStrategyObject) RawJSON() string { return r.JSON.raw }
+
 func (r *OtherFileChunkingStrategyObject) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -335,6 +338,7 @@ type StaticFileChunkingStrategy struct {
 
 // Returns the unmodified JSON received from the API
 func (r StaticFileChunkingStrategy) RawJSON() string { return r.JSON.raw }
+
 func (r *StaticFileChunkingStrategy) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -364,6 +368,7 @@ type StaticFileChunkingStrategyParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f StaticFileChunkingStrategyParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r StaticFileChunkingStrategyParam) MarshalJSON() (data []byte, err error) {
 	type shadow StaticFileChunkingStrategyParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -385,6 +390,7 @@ type StaticFileChunkingStrategyObject struct {
 
 // Returns the unmodified JSON received from the API
 func (r StaticFileChunkingStrategyObject) RawJSON() string { return r.JSON.raw }
+
 func (r *StaticFileChunkingStrategyObject) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -406,6 +412,7 @@ type StaticFileChunkingStrategyObjectParam struct {
 func (f StaticFileChunkingStrategyObjectParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r StaticFileChunkingStrategyObjectParam) MarshalJSON() (data []byte, err error) {
 	type shadow StaticFileChunkingStrategyObjectParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -465,6 +472,7 @@ type VectorStore struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStore) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStore) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -495,6 +503,7 @@ type VectorStoreFileCounts struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreFileCounts) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreFileCounts) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -529,6 +538,7 @@ type VectorStoreExpiresAfter struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreExpiresAfter) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreExpiresAfter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -550,6 +560,7 @@ type VectorStoreDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -584,6 +595,7 @@ type VectorStoreSearchResponse struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreSearchResponse) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreSearchResponse) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -651,6 +663,7 @@ type VectorStoreSearchResponseContent struct {
 
 // Returns the unmodified JSON received from the API
 func (r VectorStoreSearchResponseContent) RawJSON() string { return r.JSON.raw }
+
 func (r *VectorStoreSearchResponseContent) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -703,6 +716,7 @@ type VectorStoreNewParamsExpiresAfter struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f VectorStoreNewParamsExpiresAfter) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r VectorStoreNewParamsExpiresAfter) MarshalJSON() (data []byte, err error) {
 	type shadow VectorStoreNewParamsExpiresAfter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -751,6 +765,7 @@ type VectorStoreUpdateParamsExpiresAfter struct {
 func (f VectorStoreUpdateParamsExpiresAfter) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r VectorStoreUpdateParamsExpiresAfter) MarshalJSON() (data []byte, err error) {
 	type shadow VectorStoreUpdateParamsExpiresAfter
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -837,6 +852,7 @@ type VectorStoreSearchParamsQueryUnion struct {
 func (u VectorStoreSearchParamsQueryUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u VectorStoreSearchParamsQueryUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[VectorStoreSearchParamsQueryUnion](u.OfString, u.OfVectorStoreSearchsQueryArray)
 }
@@ -864,6 +880,7 @@ type VectorStoreSearchParamsFiltersUnion struct {
 func (u VectorStoreSearchParamsFiltersUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u VectorStoreSearchParamsFiltersUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[VectorStoreSearchParamsFiltersUnion](u.OfComparisonFilter, u.OfCompoundFilter)
 }
@@ -924,6 +941,7 @@ type VectorStoreSearchParamsRankingOptions struct {
 func (f VectorStoreSearchParamsRankingOptions) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r VectorStoreSearchParamsRankingOptions) MarshalJSON() (data []byte, err error) {
 	type shadow VectorStoreSearchParamsRankingOptions
 	return param.MarshalObject(r, (*shadow)(&r))

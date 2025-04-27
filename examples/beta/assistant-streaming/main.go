@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/openai/openai-go"
+	"github.com/Miuzarte/openai-go"
 )
 
 func main() {
@@ -22,7 +22,6 @@ func main() {
 		},
 		Model: openai.ChatModelGPT4_1106Preview,
 	})
-
 	if err != nil {
 		panic(err)
 	}

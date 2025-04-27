@@ -10,16 +10,16 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/packages/ssestream"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/packages/ssestream"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 	"github.com/tidwall/gjson"
 )
 
@@ -243,6 +243,7 @@ type RequiredActionFunctionToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r RequiredActionFunctionToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *RequiredActionFunctionToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -265,6 +266,7 @@ type RequiredActionFunctionToolCallFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r RequiredActionFunctionToolCallFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *RequiredActionFunctionToolCallFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -415,6 +417,7 @@ type Run struct {
 
 // Returns the unmodified JSON received from the API
 func (r Run) RawJSON() string { return r.JSON.raw }
+
 func (r *Run) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -438,6 +441,7 @@ type RunIncompleteDetails struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunIncompleteDetails) RawJSON() string { return r.JSON.raw }
+
 func (r *RunIncompleteDetails) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -462,6 +466,7 @@ type RunLastError struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunLastError) RawJSON() string { return r.JSON.raw }
+
 func (r *RunLastError) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -485,6 +490,7 @@ type RunRequiredAction struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunRequiredAction) RawJSON() string { return r.JSON.raw }
+
 func (r *RunRequiredAction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -504,6 +510,7 @@ type RunRequiredActionSubmitToolOutputs struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunRequiredActionSubmitToolOutputs) RawJSON() string { return r.JSON.raw }
+
 func (r *RunRequiredActionSubmitToolOutputs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -533,6 +540,7 @@ type RunTruncationStrategy struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunTruncationStrategy) RawJSON() string { return r.JSON.raw }
+
 func (r *RunTruncationStrategy) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -559,6 +567,7 @@ type RunUsage struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunUsage) RawJSON() string { return r.JSON.raw }
+
 func (r *RunUsage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -735,6 +744,7 @@ type BetaThreadRunNewParamsAdditionalMessage struct {
 func (f BetaThreadRunNewParamsAdditionalMessage) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadRunNewParamsAdditionalMessage) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadRunNewParamsAdditionalMessage
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -760,6 +770,7 @@ type BetaThreadRunNewParamsAdditionalMessageContentUnion struct {
 func (u BetaThreadRunNewParamsAdditionalMessageContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadRunNewParamsAdditionalMessageContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadRunNewParamsAdditionalMessageContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -786,6 +797,7 @@ type BetaThreadRunNewParamsAdditionalMessageAttachment struct {
 func (f BetaThreadRunNewParamsAdditionalMessageAttachment) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadRunNewParamsAdditionalMessageAttachment) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadRunNewParamsAdditionalMessageAttachment
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -805,6 +817,7 @@ type BetaThreadRunNewParamsAdditionalMessageAttachmentToolUnion struct {
 func (u BetaThreadRunNewParamsAdditionalMessageAttachmentToolUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u BetaThreadRunNewParamsAdditionalMessageAttachmentToolUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[BetaThreadRunNewParamsAdditionalMessageAttachmentToolUnion](u.OfCodeInterpreter, u.OfFileSearch)
 }
@@ -858,6 +871,7 @@ type BetaThreadRunNewParamsAdditionalMessageAttachmentToolFileSearch struct {
 func (f BetaThreadRunNewParamsAdditionalMessageAttachmentToolFileSearch) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadRunNewParamsAdditionalMessageAttachmentToolFileSearch) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadRunNewParamsAdditionalMessageAttachmentToolFileSearch
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -886,6 +900,7 @@ type BetaThreadRunNewParamsTruncationStrategy struct {
 func (f BetaThreadRunNewParamsTruncationStrategy) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadRunNewParamsTruncationStrategy) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadRunNewParamsTruncationStrategy
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -992,6 +1007,7 @@ type BetaThreadRunSubmitToolOutputsParamsToolOutput struct {
 func (f BetaThreadRunSubmitToolOutputsParamsToolOutput) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r BetaThreadRunSubmitToolOutputsParamsToolOutput) MarshalJSON() (data []byte, err error) {
 	type shadow BetaThreadRunSubmitToolOutputsParamsToolOutput
 	return param.MarshalObject(r, (*shadow)(&r))

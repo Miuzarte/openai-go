@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"os"
 
-	"github.com/openai/openai-go"
+	"github.com/Miuzarte/openai-go"
 )
 
 func main() {
@@ -56,7 +56,7 @@ func main() {
 
 	dest := "./image.png"
 	println("Writing image to " + dest)
-	err = os.WriteFile(dest, imageBytes, 0755)
+	err = os.WriteFile(dest, imageBytes, 0o755)
 	if err != nil {
 		panic(err)
 	}

@@ -6,9 +6,9 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/param"
 )
 
 // AudioSpeechService contains methods and other services that help with

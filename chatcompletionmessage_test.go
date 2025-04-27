@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/internal/testutil"
-	"github.com/openai/openai-go/option"
+	"github.com/Miuzarte/openai-go"
+	"github.com/Miuzarte/openai-go/internal/testutil"
+	"github.com/Miuzarte/openai-go/option"
 )
 
 func TestChatCompletionMessageListWithOptionalParams(t *testing.T) {

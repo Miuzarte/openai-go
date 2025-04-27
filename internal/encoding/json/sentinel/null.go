@@ -1,9 +1,10 @@
 package sentinel
 
 import (
-	"github.com/openai/openai-go/internal/encoding/json/shims"
 	"reflect"
 	"sync"
+
+	"github.com/Miuzarte/openai-go/internal/encoding/json/shims"
 )
 
 var nullPtrsCache sync.Map // map[reflect.Type]*T

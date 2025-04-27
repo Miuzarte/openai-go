@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 
-	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/responses"
+	"github.com/Miuzarte/openai-go"
+	"github.com/Miuzarte/openai-go/responses"
 )
 
 func main() {
@@ -17,7 +17,6 @@ func main() {
 		Input: responses.ResponseNewParamsInputUnion{OfString: openai.String(question)},
 		Model: openai.ChatModelGPT4,
 	})
-
 	if err != nil {
 		panic(err)
 	}

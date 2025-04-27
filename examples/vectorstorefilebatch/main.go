@@ -4,11 +4,10 @@ import (
 	"context"
 	"os"
 
-	"github.com/openai/openai-go"
+	"github.com/Miuzarte/openai-go"
 )
 
 func main() {
-
 	fileParams := []openai.FileNewParams{}
 
 	if len(os.Args) < 3 || os.Args[1] != "--" {
@@ -44,7 +43,6 @@ func main() {
 			Name: openai.String("Test vector store"),
 		},
 	)
-
 	if err != nil {
 		panic(err)
 	}
@@ -52,7 +50,6 @@ func main() {
 	// 0 uses default polling interval
 	batch, err := client.VectorStores.FileBatches.UploadAndPoll(ctx, vectorStore.ID, fileParams,
 		[]string{}, 0)
-
 	if err != nil {
 		panic(err)
 	}
@@ -66,7 +63,6 @@ func main() {
 	println("Vector JSON:", vector.URLQuery())
 
 	filesCursor, err := client.VectorStores.FileBatches.ListFiles(ctx, vectorStore.ID, batch.ID, vector)
-
 	if err != nil {
 		panic(err)
 	}

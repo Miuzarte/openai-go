@@ -10,15 +10,15 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // BetaThreadRunStepService contains methods and other services that help with
@@ -113,6 +113,7 @@ type CodeInterpreterLogs struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterLogs) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterLogs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -136,6 +137,7 @@ type CodeInterpreterOutputImage struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterOutputImage) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterOutputImage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -155,6 +157,7 @@ type CodeInterpreterOutputImageImage struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterOutputImageImage) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterOutputImageImage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -181,6 +184,7 @@ type CodeInterpreterToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -205,6 +209,7 @@ type CodeInterpreterToolCallCodeInterpreter struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCallCodeInterpreter) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCallCodeInterpreter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -241,6 +246,7 @@ type anyCodeInterpreterToolCallCodeInterpreterOutput interface {
 
 func (CodeInterpreterToolCallCodeInterpreterOutputLogs) implCodeInterpreterToolCallCodeInterpreterOutputUnion() {
 }
+
 func (CodeInterpreterToolCallCodeInterpreterOutputImage) implCodeInterpreterToolCallCodeInterpreterOutputUnion() {
 }
 
@@ -297,6 +303,7 @@ type CodeInterpreterToolCallCodeInterpreterOutputLogs struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCallCodeInterpreterOutputLogs) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCallCodeInterpreterOutputLogs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -317,6 +324,7 @@ type CodeInterpreterToolCallCodeInterpreterOutputImage struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCallCodeInterpreterOutputImage) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCallCodeInterpreterOutputImage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -336,6 +344,7 @@ type CodeInterpreterToolCallCodeInterpreterOutputImageImage struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCallCodeInterpreterOutputImageImage) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCallCodeInterpreterOutputImageImage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -365,6 +374,7 @@ type CodeInterpreterToolCallDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCallDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCallDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -389,6 +399,7 @@ type CodeInterpreterToolCallDeltaCodeInterpreter struct {
 
 // Returns the unmodified JSON received from the API
 func (r CodeInterpreterToolCallDeltaCodeInterpreter) RawJSON() string { return r.JSON.raw }
+
 func (r *CodeInterpreterToolCallDeltaCodeInterpreter) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -484,6 +495,7 @@ type FileSearchToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -506,6 +518,7 @@ type FileSearchToolCallFileSearch struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolCallFileSearch) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolCallFileSearch) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -532,6 +545,7 @@ type FileSearchToolCallFileSearchRankingOptions struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolCallFileSearchRankingOptions) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolCallFileSearchRankingOptions) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -562,6 +576,7 @@ type FileSearchToolCallFileSearchResult struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolCallFileSearchResult) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolCallFileSearchResult) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -585,6 +600,7 @@ type FileSearchToolCallFileSearchResultContent struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolCallFileSearchResultContent) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolCallFileSearchResultContent) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -613,6 +629,7 @@ type FileSearchToolCallDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r FileSearchToolCallDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *FileSearchToolCallDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -638,6 +655,7 @@ type FunctionToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r FunctionToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *FunctionToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -665,6 +683,7 @@ type FunctionToolCallFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r FunctionToolCallFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *FunctionToolCallFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -693,6 +712,7 @@ type FunctionToolCallDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r FunctionToolCallDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *FunctionToolCallDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -720,6 +740,7 @@ type FunctionToolCallDeltaFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r FunctionToolCallDeltaFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *FunctionToolCallDeltaFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -741,6 +762,7 @@ type MessageCreationStepDetails struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageCreationStepDetails) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageCreationStepDetails) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -759,6 +781,7 @@ type MessageCreationStepDetailsMessageCreation struct {
 
 // Returns the unmodified JSON received from the API
 func (r MessageCreationStepDetailsMessageCreation) RawJSON() string { return r.JSON.raw }
+
 func (r *MessageCreationStepDetailsMessageCreation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -840,6 +863,7 @@ type RunStep struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStep) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStep) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -865,6 +889,7 @@ type RunStepLastError struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStepLastError) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStepLastError) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -977,6 +1002,7 @@ type RunStepUsage struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStepUsage) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStepUsage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -996,6 +1022,7 @@ type RunStepDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStepDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStepDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1088,6 +1115,7 @@ type RunStepDeltaEvent struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStepDeltaEvent) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStepDeltaEvent) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1109,6 +1137,7 @@ type RunStepDeltaMessageDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStepDeltaMessageDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStepDeltaMessageDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1127,6 +1156,7 @@ type RunStepDeltaMessageDeltaMessageCreation struct {
 
 // Returns the unmodified JSON received from the API
 func (r RunStepDeltaMessageDeltaMessageCreation) RawJSON() string { return r.JSON.raw }
+
 func (r *RunStepDeltaMessageDeltaMessageCreation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1318,6 +1348,7 @@ type ToolCallDeltaObject struct {
 
 // Returns the unmodified JSON received from the API
 func (r ToolCallDeltaObject) RawJSON() string { return r.JSON.raw }
+
 func (r *ToolCallDeltaObject) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1342,6 +1373,7 @@ type ToolCallsStepDetails struct {
 
 // Returns the unmodified JSON received from the API
 func (r ToolCallsStepDetails) RawJSON() string { return r.JSON.raw }
+
 func (r *ToolCallsStepDetails) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }

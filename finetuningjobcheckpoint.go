@@ -9,14 +9,14 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/openai/openai-go/internal/apijson"
-	"github.com/openai/openai-go/internal/apiquery"
-	"github.com/openai/openai-go/internal/requestconfig"
-	"github.com/openai/openai-go/option"
-	"github.com/openai/openai-go/packages/pagination"
-	"github.com/openai/openai-go/packages/param"
-	"github.com/openai/openai-go/packages/resp"
-	"github.com/openai/openai-go/shared/constant"
+	"github.com/Miuzarte/openai-go/internal/apijson"
+	"github.com/Miuzarte/openai-go/internal/apiquery"
+	"github.com/Miuzarte/openai-go/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/option"
+	"github.com/Miuzarte/openai-go/packages/pagination"
+	"github.com/Miuzarte/openai-go/packages/param"
+	"github.com/Miuzarte/openai-go/packages/resp"
+	"github.com/Miuzarte/openai-go/shared/constant"
 )
 
 // FineTuningJobCheckpointService contains methods and other services that help
@@ -99,6 +99,7 @@ type FineTuningJobCheckpoint struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobCheckpoint) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobCheckpoint) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -129,6 +130,7 @@ type FineTuningJobCheckpointMetrics struct {
 
 // Returns the unmodified JSON received from the API
 func (r FineTuningJobCheckpointMetrics) RawJSON() string { return r.JSON.raw }
+
 func (r *FineTuningJobCheckpointMetrics) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
