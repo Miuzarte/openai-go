@@ -205,6 +205,7 @@ type ChatCompletion struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletion) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -239,6 +240,7 @@ type ChatCompletionChoice struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChoice) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChoice) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -261,6 +263,7 @@ type ChatCompletionChoiceLogprobs struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChoiceLogprobs) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChoiceLogprobs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -307,6 +310,7 @@ type ChatCompletionAssistantMessageParam struct {
 func (f ChatCompletionAssistantMessageParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionAssistantMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionAssistantMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -327,6 +331,7 @@ type ChatCompletionAssistantMessageParamAudio struct {
 func (f ChatCompletionAssistantMessageParamAudio) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionAssistantMessageParamAudio) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionAssistantMessageParamAudio
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -346,6 +351,7 @@ type ChatCompletionAssistantMessageParamContentUnion struct {
 func (u ChatCompletionAssistantMessageParamContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionAssistantMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionAssistantMessageParamContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -373,6 +379,7 @@ type ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion struct {
 func (u ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion](u.OfText, u.OfRefusal)
 }
@@ -450,6 +457,7 @@ type ChatCompletionAssistantMessageParamFunctionCall struct {
 func (f ChatCompletionAssistantMessageParamFunctionCall) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionAssistantMessageParamFunctionCall) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionAssistantMessageParamFunctionCall
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -483,6 +491,7 @@ type ChatCompletionAudio struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionAudio) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionAudio) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -507,6 +516,7 @@ type ChatCompletionAudioParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionAudioParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionAudioParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionAudioParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -593,6 +603,7 @@ type ChatCompletionChunk struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunk) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunk) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -627,6 +638,7 @@ type ChatCompletionChunkChoice struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoice) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoice) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -662,6 +674,7 @@ type ChatCompletionChunkChoiceDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -690,6 +703,7 @@ type ChatCompletionChunkChoiceDeltaFunctionCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDeltaFunctionCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDeltaFunctionCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -717,6 +731,7 @@ type ChatCompletionChunkChoiceDeltaToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDeltaToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDeltaToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -741,6 +756,7 @@ type ChatCompletionChunkChoiceDeltaToolCallFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDeltaToolCallFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDeltaToolCallFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -763,6 +779,7 @@ type ChatCompletionChunkChoiceLogprobs struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceLogprobs) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceLogprobs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -815,6 +832,7 @@ type ChatCompletionContentPartUnionParam struct {
 func (u ChatCompletionContentPartUnionParam) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionContentPartUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionContentPartUnionParam](u.OfText, u.OfImageURL, u.OfInputAudio, u.OfFile)
 }
@@ -922,6 +940,7 @@ type ChatCompletionContentPartFileParam struct {
 func (f ChatCompletionContentPartFileParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartFileParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartFileParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -943,6 +962,7 @@ type ChatCompletionContentPartFileFileParam struct {
 func (f ChatCompletionContentPartFileFileParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartFileFileParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartFileFileParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -965,6 +985,7 @@ type ChatCompletionContentPartImageParam struct {
 func (f ChatCompletionContentPartImageParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartImageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartImageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -987,6 +1008,7 @@ type ChatCompletionContentPartImageImageURLParam struct {
 func (f ChatCompletionContentPartImageImageURLParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartImageImageURLParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartImageImageURLParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1015,6 +1037,7 @@ type ChatCompletionContentPartInputAudioParam struct {
 func (f ChatCompletionContentPartInputAudioParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartInputAudioParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartInputAudioParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1036,6 +1059,7 @@ type ChatCompletionContentPartInputAudioInputAudioParam struct {
 func (f ChatCompletionContentPartInputAudioInputAudioParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartInputAudioInputAudioParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartInputAudioInputAudioParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1063,6 +1087,7 @@ type ChatCompletionContentPartRefusalParam struct {
 func (f ChatCompletionContentPartRefusalParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartRefusalParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartRefusalParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1087,6 +1112,7 @@ type ChatCompletionContentPartTextParam struct {
 func (f ChatCompletionContentPartTextParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionContentPartTextParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionContentPartTextParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1112,6 +1138,7 @@ type ChatCompletionDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1139,6 +1166,7 @@ type ChatCompletionDeveloperMessageParam struct {
 func (f ChatCompletionDeveloperMessageParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionDeveloperMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionDeveloperMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1158,6 +1186,7 @@ type ChatCompletionDeveloperMessageParamContentUnion struct {
 func (u ChatCompletionDeveloperMessageParamContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionDeveloperMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionDeveloperMessageParamContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -1186,6 +1215,7 @@ type ChatCompletionFunctionCallOptionParam struct {
 func (f ChatCompletionFunctionCallOptionParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionFunctionCallOptionParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionFunctionCallOptionParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1211,6 +1241,7 @@ type ChatCompletionFunctionMessageParam struct {
 func (f ChatCompletionFunctionMessageParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionFunctionMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionFunctionMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1218,6 +1249,9 @@ func (r ChatCompletionFunctionMessageParam) MarshalJSON() (data []byte, err erro
 
 // A chat completion message generated by the model.
 type ChatCompletionMessage struct {
+	// deepseek-r1 reasoning content
+	ReasoningContent string `json:"reasoning_content"`
+
 	// The contents of the message.
 	Content string `json:"content,required"`
 	// The refusal message generated by the model.
@@ -1255,6 +1289,7 @@ type ChatCompletionMessage struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessage) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1313,6 +1348,7 @@ type ChatCompletionMessageAnnotation struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageAnnotation) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageAnnotation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1341,6 +1377,7 @@ type ChatCompletionMessageAnnotationURLCitation struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageAnnotationURLCitation) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageAnnotationURLCitation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1369,6 +1406,7 @@ type ChatCompletionMessageFunctionCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageFunctionCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageFunctionCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1452,6 +1490,7 @@ type ChatCompletionMessageParamUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u ChatCompletionMessageParamUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u ChatCompletionMessageParamUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionMessageParamUnion](u.OfDeveloper,
 		u.OfSystem,
@@ -1667,6 +1706,7 @@ type ChatCompletionMessageToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1702,6 +1742,7 @@ type ChatCompletionMessageToolCallFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageToolCallFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageToolCallFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1724,6 +1765,7 @@ type ChatCompletionMessageToolCallParam struct {
 func (f ChatCompletionMessageToolCallParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionMessageToolCallParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionMessageToolCallParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1748,6 +1790,7 @@ type ChatCompletionMessageToolCallFunctionParam struct {
 func (f ChatCompletionMessageToolCallFunctionParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionMessageToolCallFunctionParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionMessageToolCallFunctionParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1771,6 +1814,7 @@ type ChatCompletionNamedToolChoiceParam struct {
 func (f ChatCompletionNamedToolChoiceParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionNamedToolChoiceParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNamedToolChoiceParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1788,6 +1832,7 @@ type ChatCompletionNamedToolChoiceFunctionParam struct {
 func (f ChatCompletionNamedToolChoiceFunctionParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionNamedToolChoiceFunctionParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNamedToolChoiceFunctionParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1815,6 +1860,7 @@ type ChatCompletionPredictionContentParam struct {
 func (f ChatCompletionPredictionContentParam) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionPredictionContentParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionPredictionContentParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1834,6 +1880,7 @@ type ChatCompletionPredictionContentContentUnionParam struct {
 func (u ChatCompletionPredictionContentContentUnionParam) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionPredictionContentContentUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionPredictionContentContentUnionParam](u.OfString, u.OfArrayOfContentParts)
 }
@@ -1863,6 +1910,7 @@ type ChatCompletionStoreMessage struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionStoreMessage) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionStoreMessage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1883,6 +1931,7 @@ type ChatCompletionStreamOptionsParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionStreamOptionsParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionStreamOptionsParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionStreamOptionsParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1909,6 +1958,7 @@ type ChatCompletionSystemMessageParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionSystemMessageParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionSystemMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionSystemMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -1928,6 +1978,7 @@ type ChatCompletionSystemMessageParamContentUnion struct {
 func (u ChatCompletionSystemMessageParamContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionSystemMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionSystemMessageParamContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -1971,6 +2022,7 @@ type ChatCompletionTokenLogprob struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionTokenLogprob) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionTokenLogprob) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2000,6 +2052,7 @@ type ChatCompletionTokenLogprobTopLogprob struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionTokenLogprobTopLogprob) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionTokenLogprobTopLogprob) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2017,6 +2070,7 @@ type ChatCompletionToolParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionToolParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionToolParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionToolParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2043,6 +2097,7 @@ type ChatCompletionToolChoiceOptionUnionParam struct {
 func (u ChatCompletionToolChoiceOptionUnionParam) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionToolChoiceOptionUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionToolChoiceOptionUnionParam](u.OfAuto, u.OfChatCompletionNamedToolChoice)
 }
@@ -2099,6 +2154,7 @@ type ChatCompletionToolMessageParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionToolMessageParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionToolMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionToolMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2118,6 +2174,7 @@ type ChatCompletionToolMessageParamContentUnion struct {
 func (u ChatCompletionToolMessageParamContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionToolMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionToolMessageParamContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -2151,6 +2208,7 @@ type ChatCompletionUserMessageParam struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionUserMessageParam) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionUserMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionUserMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2170,6 +2228,7 @@ type ChatCompletionUserMessageParamContentUnion struct {
 func (u ChatCompletionUserMessageParamContentUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionUserMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionUserMessageParamContentUnion](u.OfString, u.OfArrayOfContentParts)
 }
@@ -2400,6 +2459,7 @@ type ChatCompletionNewParamsFunctionCallUnion struct {
 func (u ChatCompletionNewParamsFunctionCallUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionNewParamsFunctionCallUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionNewParamsFunctionCallUnion](u.OfFunctionCallMode, u.OfFunctionCallOption)
 }
@@ -2455,6 +2515,7 @@ type ChatCompletionNewParamsFunction struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (f ChatCompletionNewParamsFunction) IsPresent() bool { return !param.IsOmitted(f) && !f.IsNull() }
+
 func (r ChatCompletionNewParamsFunction) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNewParamsFunction
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2475,6 +2536,7 @@ type ChatCompletionNewParamsResponseFormatUnion struct {
 func (u ChatCompletionNewParamsResponseFormatUnion) IsPresent() bool {
 	return !param.IsOmitted(u) && !u.IsNull()
 }
+
 func (u ChatCompletionNewParamsResponseFormatUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionNewParamsResponseFormatUnion](u.OfText, u.OfJSONSchema, u.OfJSONObject)
 }
@@ -2543,6 +2605,7 @@ type ChatCompletionNewParamsStopUnion struct {
 // IsPresent returns true if the field's value is not omitted and not the JSON
 // "null". To check if this field is omitted, use [param.IsOmitted].
 func (u ChatCompletionNewParamsStopUnion) IsPresent() bool { return !param.IsOmitted(u) && !u.IsNull() }
+
 func (u ChatCompletionNewParamsStopUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion[ChatCompletionNewParamsStopUnion](u.OfString, u.OfChatCompletionNewsStopArray)
 }
@@ -2575,6 +2638,7 @@ type ChatCompletionNewParamsWebSearchOptions struct {
 func (f ChatCompletionNewParamsWebSearchOptions) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionNewParamsWebSearchOptions) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNewParamsWebSearchOptions
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2604,6 +2668,7 @@ type ChatCompletionNewParamsWebSearchOptionsUserLocation struct {
 func (f ChatCompletionNewParamsWebSearchOptionsUserLocation) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionNewParamsWebSearchOptionsUserLocation) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNewParamsWebSearchOptionsUserLocation
 	return param.MarshalObject(r, (*shadow)(&r))
@@ -2629,6 +2694,7 @@ type ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate struct {
 func (f ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate) IsPresent() bool {
 	return !param.IsOmitted(f) && !f.IsNull()
 }
+
 func (r ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate
 	return param.MarshalObject(r, (*shadow)(&r))
