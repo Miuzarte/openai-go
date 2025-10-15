@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/openai/openai-go/v3/internal/apijson"
-	"github.com/openai/openai-go/v3/internal/requestconfig"
-	"github.com/openai/openai-go/v3/option"
-	"github.com/openai/openai-go/v3/packages/param"
-	"github.com/openai/openai-go/v3/packages/respjson"
+	"github.com/Miuzarte/openai-go/v3/internal/apijson"
+	"github.com/Miuzarte/openai-go/v3/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/v3/option"
+	"github.com/Miuzarte/openai-go/v3/packages/param"
+	"github.com/Miuzarte/openai-go/v3/packages/respjson"
 )
 
 // aliased to make [param.APIUnion] private when embedding

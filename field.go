@@ -1,7 +1,7 @@
 package openai
 
 import (
-	"github.com/openai/openai-go/v3/packages/param"
+	"github.com/Miuzarte/openai-go/v3/packages/param"
 	"io"
 	"time"
 )

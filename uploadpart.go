@@ -12,12 +12,12 @@ import (
 	"net/http"
 	"slices"
 
-	"github.com/openai/openai-go/v3/internal/apiform"
-	"github.com/openai/openai-go/v3/internal/apijson"
-	"github.com/openai/openai-go/v3/internal/requestconfig"
-	"github.com/openai/openai-go/v3/option"
-	"github.com/openai/openai-go/v3/packages/respjson"
-	"github.com/openai/openai-go/v3/shared/constant"
+	"github.com/Miuzarte/openai-go/v3/internal/apiform"
+	"github.com/Miuzarte/openai-go/v3/internal/apijson"
+	"github.com/Miuzarte/openai-go/v3/internal/requestconfig"
+	"github.com/Miuzarte/openai-go/v3/option"
+	"github.com/Miuzarte/openai-go/v3/packages/respjson"
+	"github.com/Miuzarte/openai-go/v3/shared/constant"
 )
 
 // UploadPartService contains methods and other services that help with interacting

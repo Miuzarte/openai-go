@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/openai/openai-go/v3/internal/encoding/json/sentinel"
+	"github.com/Miuzarte/openai-go/v3/internal/encoding/json/sentinel"
 	"reflect"
 )
 

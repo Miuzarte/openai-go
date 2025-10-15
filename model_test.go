@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/openai/openai-go/v3"
-	"github.com/openai/openai-go/v3/internal/testutil"
-	"github.com/openai/openai-go/v3/option"
+	"github.com/Miuzarte/openai-go/v3"
+	"github.com/Miuzarte/openai-go/v3/internal/testutil"
+	"github.com/Miuzarte/openai-go/v3/option"
 )
 
 func TestModelGet(t *testing.T) {

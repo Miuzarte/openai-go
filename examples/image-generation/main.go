@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"os"
 
-	"github.com/openai/openai-go/v3"
+	"github.com/Miuzarte/openai-go/v3"
 )
 
 func main() {

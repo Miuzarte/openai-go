@@ -5,11 +5,11 @@ package openai
 import (
 	"encoding/json"
 
-	"github.com/openai/openai-go/v3/internal/apijson"
-	"github.com/openai/openai-go/v3/option"
-	"github.com/openai/openai-go/v3/packages/param"
-	"github.com/openai/openai-go/v3/packages/respjson"
-	"github.com/openai/openai-go/v3/shared/constant"
+	"github.com/Miuzarte/openai-go/v3/internal/apijson"
+	"github.com/Miuzarte/openai-go/v3/option"
+	"github.com/Miuzarte/openai-go/v3/packages/param"
+	"github.com/Miuzarte/openai-go/v3/packages/respjson"
+	"github.com/Miuzarte/openai-go/v3/shared/constant"
 )
 
 // FineTuningMethodService contains methods and other services that help with
